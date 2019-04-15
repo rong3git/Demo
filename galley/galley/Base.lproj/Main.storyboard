@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GALBaseViewController" customModule="galley" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cQJ-RZ-Cuy">
+                                <rect key="frame" x="0.0" y="95" width="414" height="213"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="T1F-gw-S02"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O9V-EP-SE2">
+                                    <size key="itemSize" width="414" height="210"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="hZe-DO-vHC" customClass="GALVideoCollectionViewCell" customModule="galley" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1.6666666666666667" width="414" height="210"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-3v-4bg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="417" height="210"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="videoContainerView" destination="oG9-3v-4bg" id="4SZ-cG-phu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-Qu-5O5" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="535" width="414" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="hWi-WM-ISG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="N9j-Qu-5O5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3nc-f7-FfJ"/>
+                            <constraint firstItem="N9j-Qu-5O5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I6m-2j-1r3"/>
+                            <constraint firstItem="cQJ-RZ-Cuy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IPP-oa-E5c"/>
+                            <constraint firstItem="cQJ-RZ-Cuy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="cTr-70-E5o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N9j-Qu-5O5" secondAttribute="bottom" constant="60" id="fLh-6z-xGO"/>
+                            <constraint firstItem="cQJ-RZ-Cuy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pwN-sX-5LS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="rotaryCarouselView" destination="N9j-Qu-5O5" id="ehU-4S-Fhr"/>
+                        <outlet property="videoPlayerCollectionView" destination="cQJ-RZ-Cuy" id="auj-5u-z1A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.13043478260872" y="104.34782608695653"/>
+        </scene>
+    </scenes>
+</document>
